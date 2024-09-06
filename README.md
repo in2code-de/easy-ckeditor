@@ -8,6 +8,8 @@
 
 Provides utility functions for easier plugin development for CKEditor 5
 
+> This repository is still in development and not yet ready for production use.
+
 ## License
 
 [MIT](./LICENSE) License © 2024-PRESENT [in2code GmbH](https://github.com/in2code-de)
