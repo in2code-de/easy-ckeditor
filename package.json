@@ -1,0 +1,52 @@
+{
+  "name": "easy-ckeditor",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Provides utility functions for easier plugin development for CKEditor 5",
+  "author": "Felix Ranesberger <felix.ranesberger@in2code.de>",
+  "license": "MIT",
+  "homepage": "https://github.com/in2code-de/easy-ckeditor#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/in2code-de/easy-ckeditor.git"
+  },
+  "bugs": "https://github.com/in2code-de/easy-ckeditor/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.3.2",
+    "@types/node": "^22.5.4",
+    "bumpp": "^9.5.2",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4",
+    "unbuild": "^2.0.0"
+  }
+}
