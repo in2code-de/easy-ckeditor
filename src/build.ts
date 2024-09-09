@@ -1,3 +1,4 @@
+import { build } from 'unbuild'
 import type { BuildConfig } from 'unbuild'
 
 interface Options {
@@ -13,26 +14,29 @@ interface Options {
 export function buildCkEditorPlugins(args: Options): void {
   // build files using unbuild
   (async () => {
-    const { build } = await import('unbuild')
+    for await (const plugin of args.plugins) {
+      const config: BuildConfig = {
+        entries: [{
+          builder: 'rollup',
+          input: plugin.input,
+        }],
+        externals: [
+          '@ckeditor/ckeditor5-core',
+          '@ckeditor/ckeditor5-engine',
+          '@ckeditor/ckeditor5-typing',
+          '@ckeditor/ckeditor5-ui',
+          '@ckeditor/ckeditor5-utils',
+        ],
+        rollup: {
+          inlineDependencies: true,
+          output: {
+            dir: plugin.outDir,
+          },
+        },
+        clean: false,
+      }
 
-    const config: BuildConfig = {
-      entries: args.plugins.map(plugin => ({
-        builder: 'rollup',
-        input: plugin.input,
-        outDir: plugin.outDir,
-      })),
-      externals: [
-        '@ckeditor/ckeditor5-core',
-        '@ckeditor/ckeditor5-engine',
-        '@ckeditor/ckeditor5-typing',
-        '@ckeditor/ckeditor5-ui',
-        '@ckeditor/ckeditor5-utils',
-      ],
-      rollup: {
-        inlineDependencies: true,
-      },
+      await build('.', false, config)
     }
-
-    await build('.', false, config)
   })()
 }

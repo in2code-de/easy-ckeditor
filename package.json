@@ -19,6 +19,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
+    },
+    "./build": {
+      "types": "./dist/build.d.ts",
+      "import": "./dist/build.mjs",
+      "require": "./dist/build.cjs"
     }
   },
   "main": "./dist/index.mjs",
