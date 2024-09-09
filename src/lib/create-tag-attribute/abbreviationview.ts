@@ -80,7 +80,6 @@ export default class FormView extends View {
       view: this,
     })
 
-    // TODO: can this be fixed?
     this.childViews._items.forEach((view) => {
       // Register the view in the focus tracker.
       this.focusTracker.add(view.element)
