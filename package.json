@@ -48,14 +48,13 @@
     "@ckeditor/ckeditor5-engine": "^43.1.0",
     "@ckeditor/ckeditor5-typing": "^43.1.0",
     "@ckeditor/ckeditor5-ui": "^43.1.0",
-    "@ckeditor/ckeditor5-utils": "^43.1.0"
+    "@ckeditor/ckeditor5-utils": "^43.1.0",
+    "unbuild": "^2.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.3.2",
     "@types/node": "^22.5.4",
     "bumpp": "^9.5.2",
-    "eslint": "^9.9.1",
-    "typescript": "^5.5.4",
-    "unbuild": "^2.0.0"
+    "eslint": "^9.9.1"
   }
 }
