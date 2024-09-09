@@ -1,7 +1,7 @@
 {
   "name": "easy-ckeditor",
   "type": "module",
-  "version": "0.0.6-beta.3",
+  "version": "0.0.6-beta.4",
   "packageManager": "pnpm@9.9.0",
   "description": "Provides utility functions for easier plugin development for CKEditor 5",
   "author": "Felix Ranesberger <felix.ranesberger@in2code.de>",
