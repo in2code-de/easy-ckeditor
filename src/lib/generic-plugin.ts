@@ -24,11 +24,10 @@ interface Options {
   userInputAttribute: { label: string, name: string }
 }
 
-// eslint-disable-next-line ts/explicit-function-return-type
-export function getGenericPluginInstance(options: Options) {
+export function getGenericPluginInstance(options: Options): any {
   return class GenericPlugin extends Plugin {
-    private _balloon: ContextualBalloon // Declare it as ContextualBalloon
-    private formView!: GenericFormView
+    public _balloon: ContextualBalloon // Declare it as ContextualBalloon
+    public formView!: GenericFormView
 
     // eslint-disable-next-line ts/explicit-function-return-type
     static get requires() {
