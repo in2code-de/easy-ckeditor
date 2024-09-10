@@ -9,10 +9,9 @@ interface Options {
 }
 
 /**
- * Build CkEditor plugins using unbuild
+ * Converts your CKEditor typescript plugin files to javascript.
  */
 export function buildCkEditorPlugins(args: Options): void {
-  // build files using unbuild
   (async () => {
     for await (const plugin of args.plugins) {
       const config: BuildConfig = {
