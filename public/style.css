@@ -1,0 +1,51 @@
+:root {
+    --ck-style-panel-button-width: 230px !important;
+}
+
+.ck.ck-abbr-form {
+    padding: 1.5rem 1rem 1rem !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.ck.ck-abbr-form .ck.ck-labeled-field-view:nth-of-type(1) {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.ck.ck-abbr-form .ck.ck-labeled-field-view:nth-of-type(2) {
+    grid-area: 2 / 1 / 3 / 3;
+}
+
+.ck.ck-abbr-form .ck-button:nth-of-type(1) {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.ck.ck-abbr-form .ck-button:nth-of-type(2) {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.ck.ck-references-form {
+    display: grid;
+    padding: 1.5rem 1rem 1rem !important;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.ck.ck-references-form .ck-input {
+    width: 100%;
+}
+
+.ck.ck-references-form .ck.ck-labeled-field-view:nth-of-type(1) {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.ck.ck-references-form .ck-button:nth-of-type(1) {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.ck.ck-references-form .ck-button:nth-of-type(2) {
+    grid-area: 2 / 2 / 3 / 3;
+}
