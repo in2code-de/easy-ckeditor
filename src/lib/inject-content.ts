@@ -1,5 +1,6 @@
 import { ButtonView } from '@ckeditor/ckeditor5-ui'
 import type { Editor } from '@ckeditor/ckeditor5-core'
+import type { NodeAttributes } from '@ckeditor/ckeditor5-engine'
 
 interface Button {
   id: string
@@ -14,12 +15,14 @@ interface Button {
  * @param editor The CKEditor instance.
  * @param buttonConfig The button configuration which is added to the toolbar.
  * @param content The content to inject at the current cursor position.
+ * @param attributes The attributes to apply to the injected content.
  */
 export function injectContentToCursorPosition(
   id: string,
   editor: Editor,
   buttonConfig: Button,
   content: string,
+  attributes: NodeAttributes,
 ): void {
   editor.ui.componentFactory.add(id, () => {
     const button = new ButtonView()
@@ -44,7 +47,7 @@ export function injectContentToCursorPosition(
 
         if (selection) {
           // Insert the content at the current selection
-          editor.model.insertContent(writer.createText(content), selection)
+          editor.model.insertContent(writer.createText(content, attributes), selection)
 
           // Check if nodeAfter exists before moving the cursor after it
           const nodeAfter = selection.nodeAfter
